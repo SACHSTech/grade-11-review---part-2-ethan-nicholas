@@ -4,8 +4,8 @@ package gr11review.part2;
 import java.io.FileReader;
 
 public class Utility {
-  public static int Sum(String strString){
-    
+  public static int sumNumbers(String str){
+
     // Variables
     int intLoop;
     int intLoop2;
@@ -18,8 +18,8 @@ public class Utility {
     intResult = 0;
 
     // For loop that allows the program to count how many characters are in the string
-    for(intLoop = 0; intLoop < strString.length(); intLoop++){
-      chrCharacters = strString.charAt(intLoop);
+    for(intLoop = 0; intLoop < str.length(); intLoop++){
+      chrCharacters = str.charAt(intLoop);
 
       // If the next character the program counts is a number, adds the number character to a string
       if (Character.isDigit(chrCharacters)) {
