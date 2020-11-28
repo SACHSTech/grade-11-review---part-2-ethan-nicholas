@@ -8,18 +8,34 @@ public class Utility {
 
     int intLoop;
     int intResult;
-    char chrCharacters
-    int intTotal;
+    char chrCharacters;
+    String strNumbers;
 
+    strNumbers = "";
     intResult = 0;
 
     for(intLoop = 0; intLoop < strString.length(); intLoop++){
-      strString.charAt(intLoop) = charCharacters;
-      if (strString.isDigit(chrCharacters)) {
-        intTotal = intTotal + chrCharacters;
+      chrCharacters = strString.charAt(intLoop);
+      if (Character.isDigit(chrCharacters)) {
+        strNumbers = strNumbers + chrCharacters;
+      } else if (!Character.isDigit(chrCharacters)) {
+        strNumbers = "";
       }
+    }
+    if (!strNumbers.equals("")){
+      intResult = intResult + Integer.parseInt(strNumbers);
     }
     return intResult;
   }
 }
+
+ //       strSum += chrCharacters;
+ //     } else if (!strSum.equals("")) {
+ //       intResult += Integer.parseInt(strSum);
+ //       strSum = "";
+ //     }
+ //   }
+ //   if (!strSum.equals("")) {
+ //     intResult += Integer.parseInt(strSum);
+ //   } 
 
