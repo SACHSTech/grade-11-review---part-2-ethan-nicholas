@@ -7,6 +7,7 @@ public class Utility {
   public static int Sum(String strString){
 
     int intLoop;
+    int intLoop2;
     int intResult;
     char chrCharacters;
     String strNumbers;
@@ -18,24 +19,14 @@ public class Utility {
       chrCharacters = strString.charAt(intLoop);
       if (Character.isDigit(chrCharacters)) {
         strNumbers = strNumbers + chrCharacters;
-      } else if (!Character.isDigit(chrCharacters)) {
+      } else if (!strNumbers.equals("")) {
+        intResult = intResult + Integer.parseInt(strNumbers);
         strNumbers = "";
       }
     }
-    if (!strNumbers.equals("")){
+    if(!strNumbers.equals("")){
       intResult = intResult + Integer.parseInt(strNumbers);
     }
     return intResult;
   }
 }
-
- //       strSum += chrCharacters;
- //     } else if (!strSum.equals("")) {
- //       intResult += Integer.parseInt(strSum);
- //       strSum = "";
- //     }
- //   }
- //   if (!strSum.equals("")) {
- //     intResult += Integer.parseInt(strSum);
- //   } 
-
