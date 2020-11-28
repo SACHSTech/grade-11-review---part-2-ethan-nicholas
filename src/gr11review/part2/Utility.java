@@ -7,9 +7,10 @@ public class Utility {
   public static int Sum(String strString){
 
     int intLoop;
+    double dblResult;
 
     for(intLoop = 0; intLoop < strString.length(); intLoop++){
-      
+      if (theSentence.charAt(intLoop) == 0) {
     }
 }
 
