@@ -7,10 +7,16 @@ public class Utility {
   public static int Sum(String strString){
 
     int intLoop;
-    double dblResult;
+    int intResult;
+
+    intResult = 0;
 
     for(intLoop = 0; intLoop < strString.length(); intLoop++){
-      if (theSentence.charAt(intLoop) == 0) {
+      if (strString.charAt(intLoop) == 0) {
+        intResult = 3;
+      }
     }
+    return intResult;
+  }
 }
 
