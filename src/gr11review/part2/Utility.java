@@ -34,23 +34,20 @@ public class Utility {
     String strWord = " ";
     String strLongestWord = " ";
     int intWord;
-    int intWord2;
+    int LengthofLongest;
 
-    while(words.readLine() != null){
+    while((strWord=words.readLine()) != null){
 
-      strWord = words.readLine();
       intWord = strWord.length();
+      LengthofLongest = strLongestWord.length();
 
-      intWord2 = strLongestWord.length();
-
-      if(intWord > intWord2){
+      if(intWord >= LengthofLongest){
         strLongestWord = strWord;
       }
 
     }
 
     words.close();
-
     return strLongestWord;
   }
 
