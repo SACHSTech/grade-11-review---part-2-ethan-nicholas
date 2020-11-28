@@ -8,12 +8,15 @@ public class Utility {
 
     int intLoop;
     int intResult;
+    char chrCharacters
+    int intTotal;
 
     intResult = 0;
 
     for(intLoop = 0; intLoop < strString.length(); intLoop++){
-      if (strString.charAt(intLoop) == 0) {
-        intResult = 3;
+      strString.charAt(intLoop) = charCharacters;
+      if (strString.isDigit(chrCharacters)) {
+        intTotal = intTotal + chrCharacters;
       }
     }
     return intResult;
