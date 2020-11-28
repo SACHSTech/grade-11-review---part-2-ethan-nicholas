@@ -32,21 +32,21 @@ public class Utility {
     BufferedReader words = new BufferedReader(new FileReader(filenametxt));
 
     String strWord = " ";
-    String strWord2 = " ";
     String strLongestWord = " ";
+    int intWord;
+    int intWord2;
 
-    while(strWord != null){
+    while(words.readLine() != null){
+
       strWord = words.readLine();
-      strWord2 = words.readLine();
+      intWord = strWord.length();
 
-      int intWord = strWord.length();
-      int intWord2 = strWord2.length();
+      intWord2 = strLongestWord.length();
 
       if(intWord > intWord2){
         strLongestWord = strWord;
-      }else if(intWord2 > intWord){
-        strLongestWord = strWord2;
       }
+
     }
 
     words.close();
