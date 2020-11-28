@@ -1,5 +1,9 @@
 package gr11review.part2;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileReader;
+
 public class Utility {
   public static String zipZap(String str){
 
@@ -22,4 +26,32 @@ public class Utility {
     return strNewWord;
 
   }
+
+  public static String longestWord(String filenametxt) throws IOException{
+    
+    BufferedReader words = new BufferedReader(new FileReader(filenametxt));
+
+    String strWord = " ";
+    String strWord2 = " ";
+    String strLongestWord = " ";
+
+    while(strWord != null){
+      strWord = words.readLine();
+      strWord2 = words.readLine();
+
+      int intWord = strWord.length();
+      int intWord2 = strWord2.length();
+
+      if(intWord > intWord2){
+        strLongestWord = strWord;
+      }else if(intWord2 > intWord){
+        strLongestWord = strWord2;
+      }
+    }
+
+    words.close();
+
+    return strLongestWord;
+  }
+
 }
