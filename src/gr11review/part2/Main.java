@@ -11,7 +11,15 @@ public class Main {
     
     String strString;
     int intSum;
-    
+    System.out.println("Methods 2");
+    System.out.print("Give me a string: ");
+    strString = keyboard.readLine();
+    intSum = Utility.Sum(strString);
+    System.out.println("This is the sum: " + intSum);
+
+    String strString;
+    int intSum;
+    System.out.println("File IO 2");
     System.out.print("Give me a string: ");
     strString = keyboard.readLine();
     intSum = Utility.Sum(strString);
