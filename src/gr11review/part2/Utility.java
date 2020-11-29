@@ -44,7 +44,7 @@ public class Utility {
 // Write a method alphaWord(String filenametxt) such that given the name of a file filenametxt that contains a single word on each line, returns the word that is alphabetically first.
 
   // File IO - Read 2
-  public static String alphaWord(String filenametxt){
+  public static String alphaWord(String filenametxt) throws IOException{
     BufferedReader TextFile = new BufferedReader(new FileReader(filenametxt));
     String strResultingWord;
     String strLine;
