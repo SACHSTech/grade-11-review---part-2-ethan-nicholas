@@ -2,7 +2,9 @@ package gr11review.part2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class Utility {
   public static String zipZap(String str){
@@ -83,6 +85,7 @@ public class Utility {
     int intTrack = 0;
 
     for(int intCount = 0; intCount < intLen; intCount = intCount + 1){
+      // the loop compares each number in the outer array to the number(s) in the inner array
       for(int intCount2 = 0; intCount2 < intLen2; intCount2 = intCount2 + 1){
         if(inner[intCount2] == outer[intCount]){
           intTrack = intTrack + 1;
@@ -97,6 +100,38 @@ public class Utility {
     }
 
     return result;
+  }
+
+  public static String pascalTri(int i, int j) throws IOException {
+
+    String strTest="";
+    int[][] p = new int [i][j];
+
+    for(int intColumns = 0; intColumns < j; intColumns++){
+      for(int intRows = 0; intRows < i; intRows++){
+        p[0][intColumns] = 1;
+        p[intRows][0] = 1;
+      }
+    }
+
+    for(int intColumns = 1; intColumns < j; intColumns++){
+      for(int intRows = 1; intRows < i; intRows++){
+        p[intRows][intColumns] = p[intRows-1][intColumns] + p[intRows][intColumns-1];
+      }
+    }
+
+    PrintWriter pascalOut = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt", true));
+
+    for(int intRows = 0; intRows < i; intRows++){
+      for(int intColumns = 0; intColumns < j; intColumns++){
+        pascalOut.println(p[intRows][intColumns]);
+      }
+    }
+
+    pascalOut.close();
+
+    return strTest;
+
   }
 
 }
