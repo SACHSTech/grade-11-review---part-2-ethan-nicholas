@@ -45,7 +45,7 @@ public class Utility {
 
 // Write a method alphaWord(String filenametxt) such that given the name of a file filenametxt that contains a single word on each line,returns the word that is alphabetically first.
 
-  // File IO - Read 2
+  // File IO - Read 2 Method
   public static String alphaWord(String filenametxt) throws IOException {
     BufferedReader TextFile = new BufferedReader(new FileReader(filenametxt));
 
@@ -78,7 +78,26 @@ public class Utility {
   }
 
 // We'll say that an element in an array is "alone" if there are values before and after it, and those values are different from it. Return a version of the given array where every instance of the given value which is alone is replaced by whichever value to its left or right is larger. public int[] notAlone(int[] nums, int val)
+
+  // Array 2 - One Dimensional Method
   public static int[] notAlone(int[] nums, int val){
     
+    // Variables
+    int intLoop;
+
+    // For loop that counts every cell in the array. Starts at the second cell of the array and ends at the second last cell of the array. So, every element it checks is an "alone" element.
+    for (intLoop = 1; intLoop < nums.length - 1; intLoop++) {
+      // Checking which number in the array is equal to the selected value
+      if (nums[intLoop] == val) {
+        // Prevents the program from changing two of the same numbers
+        if (nums[intLoop - 1] != nums[intLoop] && nums[intLoop + 1] != nums[intLoop]) {
+          // Checks which of the two adjacent numbers are bigger and makes the number selected equal to the bigger adjacent number
+          nums[intLoop] = Math.max(nums[intLoop - 1], nums[intLoop + 1]);
+        }
+      }
+    }
+    return nums;
   }
+
+// Given a non-empty array, return true if there is a place to split the array so that the sum of the numbers on one side is equal to the sum of the numbers on the other side. Signature public boolean canBalance(int[] nums)
 }
