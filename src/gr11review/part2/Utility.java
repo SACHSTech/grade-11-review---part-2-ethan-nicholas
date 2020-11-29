@@ -43,25 +43,33 @@ public class Utility {
     return intResult;
   }
 
-// Write a method alphaWord(String filenametxt) such that given the name of a file filenametxt that contains a single word on each line, returns the word that is alphabetically first.
+// Write a method alphaWord(String filenametxt) such that given the name of a file filenametxt that contains a single word on each line,returns the word that is alphabetically first.
 
   // File IO - Read 2
   public static String alphaWord(String filenametxt) throws IOException {
     BufferedReader TextFile = new BufferedReader(new FileReader(filenametxt));
 
+    // Variables
     String strTempWord;
     String strResultingWord;
     int intAlphaCompare;
     
-    strResultingWord = null;
+    // Initializing Variables
     strTempWord = TextFile.readLine();
-    strResultingWord = strTempWord;
+    strResultingWord = TextFile.readLine();
 
+    // While Loop that keeps on looping strTempWord until it becomes null (end of file)
     while(strTempWord != null){
+
+      // Compares the current word (strTempWord) to the first word of the file (strResultingWord)
 			intAlphaCompare = strResultingWord.compareToIgnoreCase(strTempWord);
+
+      // If intAlphaCompare is positive, then that means strTempWord is before strResultingWord in the alphabet. Then sets that word as the word to return.
       if (intAlphaCompare > 0) {
         strResultingWord = strTempWord;
       }
+
+      // Sets strTempWord as the current word in the file.
       strTempWord = TextFile.readLine();
     }
 
