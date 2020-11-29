@@ -14,6 +14,9 @@ public class Main {
     String str;
     int intSum;
 
+    String filenametxt;
+    String strAlphaword;
+
     System.out.println("Select the program to run: ");
     System.out.println("Options: Methods 2, ");
     strSelect = keyboard.readLine();
@@ -26,10 +29,8 @@ public class Main {
         System.out.println("This is the sum: " + intSum);
         break;
       case "File IO 2" :
-        System.out.print("Give me a string: ");
-        str = keyboard.readLine();
-        intSum = Utility.sumNumbers(str);
-        System.out.println("This is the sum: " + intSum);
+        Utility.alphaWord(filenametxt);
+        System.out.println("This is the first alphabetical word: " + strAlphaword);
       default :
         System.out.println("That is not an option");
         break;

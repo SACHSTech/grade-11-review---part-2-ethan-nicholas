@@ -42,32 +42,19 @@ public class Utility {
   }
 
 // Write a method alphaWord(String filenametxt) such that given the name of a file filenametxt that contains a single word on each line, returns the word that is alphabetically first.
-/*Signature public static String alphaWord(String filenametxt)
-
-Example
-words.txt contains:
-
-Lorem
-ipsum
-dolor
-sit
-amet
-consectetur
-adipiscing 
-elit
-Lorem
-ipsum
-dolor
-sit
-amet
-consectetur
-adipiscing 
-elit
-alphaWord("words.txt") --> "amet"
-*/
 
   // File IO - Read 2
-  //public static String alphaWord(String filenametxt){
+  public static String alphaWord(String filenametxt){
+    BufferedReader TextFile = new BufferedReader(new FileReader(filenametxt));
+    String strResultingWord;
+    String strLine;
 
-  //}
+    while(TextFile.eof() == false){
+      strLine = TextFile.readLine();
+      if(TextFile.eof() == true){
+        strResultingWord = TextFile.readLine();
+      }
+    }
+    return strResultingWord;
+  }
 }
