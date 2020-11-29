@@ -67,7 +67,7 @@ alphaWord("words.txt") --> "amet"
 */
 
   // File IO - Read 2
-  public static String alphaWord(String filenametxt){
+  //public static String alphaWord(String filenametxt){
 
-  }
+  //}
 }
