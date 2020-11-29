@@ -50,20 +50,19 @@ public class Utility {
     BufferedReader TextFile = new BufferedReader(new FileReader(filenametxt));
 
     String strTempWord;
-    String strLine;
     String strResultingWord;
     int intAlphaCompare;
-
+    
     strResultingWord = null;
     strTempWord = TextFile.readLine();
+    strResultingWord = strTempWord;
 
-    while((strLine = TextFile.readLine()) != null){
-      intAlphaCompare = strTempWord.compareToIgnoreCase(strLine);
-      if(intAlphaCompare > 0){
-        strResultingWord = strLine;
-      } else if (intAlphaCompare < 0){
+    while(strTempWord != null){
+			intAlphaCompare = strResultingWord.compareToIgnoreCase(strTempWord);
+      if (intAlphaCompare > 0) {
         strResultingWord = strTempWord;
       }
+      strTempWord = TextFile.readLine();
     }
 
     TextFile.close();
