@@ -7,49 +7,80 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 public class Utility {
+
+  /**
+  * Given a string, looks for a pattern that has a length of 3, starts with "z", and ends with "p"
+  * Creates a new string with the middle character between "z" and "p" taken out  
+  * 
+  * @param str The string that is analyzed for the pattern 
+  * @return The new string
+  * @author N.Lee
+  */
   public static String zipZap(String str){
 
+    // Declares variables
     int intLen;
     String strNewWord = " ";
     
     // Added two spaces to the end of the string which adds two extra indices
+    // This allows for the last character to run through the loop
     str = str + "  ";
     intLen = str.length();
       
-    for(int intCount = 0; intCount < intLen; intCount = intCount + 1){
-      if(str.charAt(intCount) == 'z' && str.charAt(intCount + 2) == 'p'){
+    // The for loop runs through the length of the string 
+    for (int intCount = 0; intCount < intLen; intCount = intCount + 1) {
+      // Looks for the characters "z" and "p"
+      // If the pattern is found, "z" is added to the new string and it skips the following character
+      if (str.charAt(intCount) == 'z' && str.charAt(intCount + 2) == 'p') {
         strNewWord = strNewWord + "z";
         intCount = intCount + 1;
-      }else{
+      }else {
         strNewWord = strNewWord + str.charAt(intCount);
       }
     }
 
+    // Returns the new string
     return strNewWord;
-
   }
 
+  /**
+  * Given the name of a text file with a single word on each line, the longest word is returned 
+  * 
+  * @param filenametxt The name of the text file
+  * @return The longest word found in the text file
+  * @author N.Lee
+  */
   public static String longestWord(String filenametxt) throws IOException{
     
+    // Reads the given text file name
     BufferedReader words = new BufferedReader(new FileReader(filenametxt));
 
+    // Declares variables
     String strWord = " ";
     String strLongestWord = " ";
     int intWord;
-    int LengthofLongest;
+    int intLengthLongest;
 
-    while((strWord=words.readLine()) != null){
+    // The while loop continues until the end of the text file
+    while ((strWord = words.readLine()) != null) {
 
+      // The length of the word is found
       intWord = strWord.length();
-      LengthofLongest = strLongestWord.length();
+      // The length of the longest word is found
+      intLengthLongest = strLongestWord.length();
 
-      if(intWord >= LengthofLongest){
+      // Compares the length of the longest word to the word from the file
+      if (intWord >= intLengthLongest) {
+        // Updates the longest word 
         strLongestWord = strWord;
       }
 
     }
 
+    // Closes the text file
     words.close();
+
+    // Returns the longest word from the text file
     return strLongestWord;
   }
 
