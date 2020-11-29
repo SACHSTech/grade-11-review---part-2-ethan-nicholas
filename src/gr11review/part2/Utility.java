@@ -59,8 +59,8 @@ public class Utility {
       
       // if the number is a multiple of 10, then it goes to the next if statement
       if(nums[intCount] % 10 == 0){
-        // if the next number is not a mutiple of 10
-        // then the number becomes the previous number which is a multiple of 10
+        // the if statement checks if the following number is a multiple
+        // if it is not a multiple of 10 then it is changed to be the previous number
         if(nums[intCount + 1] % 10 != 0){
           nums[intCount + 1] = nums[intCount];
         }
@@ -74,7 +74,29 @@ public class Utility {
     }
 
     return nums;
+  }
 
+  public static boolean linearIn(int[] outer, int[] inner){
+    boolean result = false;
+    int intLen = outer.length;
+    int intLen2 = inner.length;
+    int intTrack = 0;
+
+    for(int intCount = 0; intCount < intLen; intCount = intCount + 1){
+      for(int intCount2 = 0; intCount2 < intLen2; intCount2 = intCount2 + 1){
+        if(inner[intCount2] == outer[intCount]){
+          intTrack = intTrack + 1;
+        }
+      }
+    }
+
+    if(intTrack >= intLen2){
+      result = true;
+    }else{
+      result = false;
+    }
+
+    return result;
   }
 
 }
