@@ -23,7 +23,7 @@ public class Utility {
     String strNewWord = " ";
     
     // Added two spaces to the end of the string which adds two extra indices
-    // This allows for the last character to run through the loop
+    // This allows for the last character to run through the if statement
     str = str + "  ";
     intLen = str.length();
       
@@ -98,7 +98,7 @@ public class Utility {
 
     // The loop goes through all the elements in the array
     for (int intCount = 0; intCount < intLen - 1; intCount = intCount + 1) {
-      // If the number is a multiple of 10, then it goes to the next if statement
+      // The modulus division finds if the number is a multiple of 10
       if (nums[intCount] % 10 == 0) {
         // The if statement checks if the following number is a multiple of 10
         // If it is not a multiple of 10 then it is changed to be the previous number
@@ -166,8 +166,7 @@ public class Utility {
   }
 
   /**
-  * Given two values representing the amount of rows and columns,  
-  * a Pascal's triangle is created and outputted on a textfile
+  * Given two values representing the amount of rows and columns, a Pascal's triangle is displayed on a textfile
   *
   * @param i The number of the rows
   * @param j The number of columns
@@ -195,7 +194,7 @@ public class Utility {
       }
     }
 
-    // Allows for inputting the values into the text file
+    // Allows for the inputting of the values into the text file
     PrintWriter pascalOut = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt", true));
 
     // Prints out the values of the array into the file

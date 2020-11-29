@@ -6,17 +6,22 @@ import java.io.*;
 public class Main {
 	public static void main(String[] args) throws IOException{
 
-    //System.out.println(Utility.zipZap("zipXzap"));
+    // Method 1
+    System.out.println(Utility.zipZap("zipXzap"));
 
-    //System.out.println(Utility.longestWord("src/gr11review/part2/words.txt"));
+    // File IO 1
+    System.out.println(Utility.longestWord("src/gr11review/part2/words.txt"));
 
-    //int[] num = {2,10,3,4,20,5};
-    //Utility.tenRun(num);
+    // Array 1
+    int[] num = {10, 1, 9, 20};
+    Utility.tenRun(num);
 
-    //int[] outer = {1,2,4,6};
-    //int[] inner = {2,4};
-    //System.out.println(Utility.linearIn(outer, inner));
+    // Array 3
+    int[] outer = {1,2,4,6};
+    int[] inner = {2,4};
+    System.out.println(Utility.linearIn(outer, inner));
 
+    // Array 5
     int i = 3;
     int j = 4;
     Utility.pascalTri(i, j);
