@@ -84,52 +84,82 @@ public class Utility {
     return strLongestWord;
   }
 
+  /**
+  * Given an array, for each multiple of 10, the following numbers are changed to that multiple
+  * 
+  * @param nums The array with numbers
+  * @return The new array with the updated numbers  
+  * @author N.Lee
+  */
   public static int[] tenRun(int[] nums){
-
+    
+    // Declares variable
     int intLen = nums.length;
 
-    for(int intCount = 0; intCount < intLen - 1; intCount = intCount + 1){
-      
-      // if the number is a multiple of 10, then it goes to the next if statement
-      if(nums[intCount] % 10 == 0){
-        // the if statement checks if the following number is a multiple
-        // if it is not a multiple of 10 then it is changed to be the previous number
-        if(nums[intCount + 1] % 10 != 0){
+    // The loop goes through all the elements in the array
+    for (int intCount = 0; intCount < intLen - 1; intCount = intCount + 1) {
+
+      // If the number is a multiple of 10, then it goes to the next if statement
+      if (nums[intCount] % 10 == 0) {
+
+        // The if statement checks if the following number is a multiple of 10
+        // If it is not a multiple of 10 then it is changed to be the previous number
+        if (nums[intCount + 1] % 10 != 0) {
           nums[intCount + 1] = nums[intCount];
         }
       }
     }
 
-    // displays the array
-    for(int intCount2 = 0; intCount2 < intLen; intCount2 = intCount2 + 1){
+    // Displays the array
+    for (int intCount2 = 0; intCount2 < intLen; intCount2 = intCount2 + 1) {
       System.out.print(nums[intCount2] + ", ");
     }
 
+    // Returns the updated array
     return nums;
   }
 
+  /**
+  * Given two arrays, checks if all the numbers found in the "innner" array appear in the "outer" array  
+  *
+  * @param outer The first array
+  * @param inner The second array
+  * @return A boolean value  
+  * @author N.Lee
+  */
   public static boolean linearIn(int[] outer, int[] inner){
+
+    // Declares variables
     boolean result = false;
     int intLen = outer.length;
     int intLen2 = inner.length;
     int intTrack = 0;
+    int[] check = new int [intLen2];
 
-    for(int intCount = 0; intCount < intLen; intCount = intCount + 1){
-      // the loop compares each number in the outer array to the number(s) in the inner array
-      for(int intCount2 = 0; intCount2 < intLen2; intCount2 = intCount2 + 1){
-        if(inner[intCount2] == outer[intCount]){
-          intTrack = intTrack + 1;
+    // The loop continues until the length of the inner array is reached
+    for (int intCount = 0; intCount < intLen2; intCount = intCount + 1) {
+      
+      // The loop continues to run until the length of the outer array is reached
+      for (int intCount2 = 0; intCount2 < intLen; intCount2 = intCount2 + 1) {
+        // Compares each number in the inner array to the numbers in the outer array
+        if (inner[intCount] == outer[intCount2]) {
+          check[intCount] = 1;
         }
       }
     }
-
-    if(intTrack >= intLen2){
-      result = true;
-    }else{
-      result = false;
+ 
+    for(int intCount = 0; intCount < intLen2; intCount++){
+      if(check[intCount] == 1){
+        intTrack = intTrack + 1;
+      }else if (check[intCount] == 0) {
+        result = false;
+      }
     }
 
-    System.out.println(" ");
+    if (intTrack == intLen2) {
+      result = true;
+    }
+
     return result;
   }
 
