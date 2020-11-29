@@ -13,13 +13,13 @@ public class Main {
     //int[] num = {2,10,3,4,20,5};
     //Utility.tenRun(num);
 
-    int[] outer = {1,2,2,6};
-    int[] inner = {2,4};
-    System.out.println(Utility.linearIn(outer, inner));
+    //int[] outer = {1,2,4,6};
+    //int[] inner = {2,4};
+    //System.out.println(Utility.linearIn(outer, inner));
 
-    //int i = 4;
-    //int j = 5;
-    //Utility.pascalTri(i, j);
+    int i = 3;
+    int j = 4;
+    Utility.pascalTri(i, j);
 
   }
 }

@@ -98,10 +98,8 @@ public class Utility {
 
     // The loop goes through all the elements in the array
     for (int intCount = 0; intCount < intLen - 1; intCount = intCount + 1) {
-
       // If the number is a multiple of 10, then it goes to the next if statement
       if (nums[intCount] % 10 == 0) {
-
         // The if statement checks if the following number is a multiple of 10
         // If it is not a multiple of 10 then it is changed to be the previous number
         if (nums[intCount + 1] % 10 != 0) {
@@ -131,71 +129,88 @@ public class Utility {
 
     // Declares variables
     boolean result = false;
-    int intLen = outer.length;
-    int intLen2 = inner.length;
+    int intLenOuter = outer.length;
+    int intLenInner = inner.length;
     int intTrack = 0;
-    int[] check = new int [intLen2];
+    int[] check = new int [intLenInner];
 
     // The loop continues until the length of the inner array is reached
-    for (int intCount = 0; intCount < intLen2; intCount = intCount + 1) {
-      
+    for (int intCount = 0; intCount < intLenInner; intCount = intCount + 1) {
       // The loop continues to run until the length of the outer array is reached
-      for (int intCount2 = 0; intCount2 < intLen; intCount2 = intCount2 + 1) {
+      for (int intCount2 = 0; intCount2 < intLenOuter; intCount2 = intCount2 + 1) {
         // Compares each number in the inner array to the numbers in the outer array
+        // If the numbers match, the check array index will have a value of 1
         if (inner[intCount] == outer[intCount2]) {
           check[intCount] = 1;
         }
       }
     }
- 
-    for(int intCount = 0; intCount < intLen2; intCount++){
-      if(check[intCount] == 1){
+
+    // Checks to see if the value one is present throughout the array
+    // If one of the indices has a value of 0, the result is false 
+    for (int intCount = 0; intCount < intLenInner; intCount++) {
+      if (check[intCount] == 1) {
         intTrack = intTrack + 1;
       }else if (check[intCount] == 0) {
         result = false;
       }
     }
 
-    if (intTrack == intLen2) {
+    // Compares the amount of ones found in the array to the length of the inner array
+    if (intTrack == intLenInner) {
       result = true;
     }
 
+    // Returns a boolean value
     return result;
   }
 
-  public static String pascalTri(int i, int j) throws IOException {
+  /**
+  * Given two values representing the amount of rows and columns,  
+  * a Pascal's triangle is created and outputted on a textfile
+  *
+  * @param i The number of the rows
+  * @param j The number of columns
+  * @return Nothing is returned, but a text file is created 
+  * @author N.Lee
+  */
+  public static void pascalTri(int i, int j) throws IOException {
 
-    String strEmpty="";
+    // Declares variable
     int[][] p = new int [i][j];
 
-    for(int intColumns = 0; intColumns < j; intColumns++){
-      for(int intRows = 0; intRows < i; intRows++){
+    // The first row and first column will have the value of 1 
+    for (int intColumns = 0; intColumns < j; intColumns++) {
+      for (int intRows = 0; intRows < i; intRows++) {
         p[0][intColumns] = 1;
         p[intRows][0] = 1;
       }
     }
 
-    for(int intColumns = 1; intColumns < j; intColumns++){
-      for(int intRows = 1; intRows < i; intRows++){
+    // Finds the value of the other indices in the array
+    // The value is found by adding the values of the indices of the one above and to its left
+    for (int intColumns = 1; intColumns < j; intColumns++) {
+      for (int intRows = 1; intRows < i; intRows++) {
         p[intRows][intColumns] = p[intRows-1][intColumns] + p[intRows][intColumns-1];
       }
     }
 
+    // Allows for inputting the values into the text file
     PrintWriter pascalOut = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt", true));
 
-    for(int intRows = 0; intRows < i; intRows++){
-      for(int intColumns = 0; intColumns < j; intColumns++){
+    // Prints out the values of the array into the file
+    for (int intRows = 0; intRows < i; intRows++) {
+      for (int intColumns = 0; intColumns < j; intColumns++) {
         pascalOut.print(p[intRows][intColumns] + ", ");
-        if(intColumns == j-1){
+        // Allows for the next row to be printed on the next line
+        if (intColumns == j - 1) {
           pascalOut.println(" ");
         }
       }
     }
 
+    // Closes text file
     pascalOut.close();
-
-    return strEmpty;
-
   }
 
 }
