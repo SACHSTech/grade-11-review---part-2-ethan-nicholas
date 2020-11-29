@@ -67,12 +67,11 @@ public class Utility {
           nums[intCount + 1] = nums[intCount];
         }
       }
-      
     }
 
     // displays the array
     for(int intCount2 = 0; intCount2 < intLen; intCount2 = intCount2 + 1){
-      System.out.println(nums[intCount2]);
+      System.out.print(nums[intCount2] + ", ");
     }
 
     return nums;
@@ -99,12 +98,13 @@ public class Utility {
       result = false;
     }
 
+    System.out.println(" ");
     return result;
   }
 
   public static String pascalTri(int i, int j) throws IOException {
 
-    String strTest="";
+    String strEmpty="";
     int[][] p = new int [i][j];
 
     for(int intColumns = 0; intColumns < j; intColumns++){
@@ -124,13 +124,16 @@ public class Utility {
 
     for(int intRows = 0; intRows < i; intRows++){
       for(int intColumns = 0; intColumns < j; intColumns++){
-        pascalOut.println(p[intRows][intColumns]);
+        pascalOut.print(p[intRows][intColumns] + ", ");
+        if(intColumns == j-1){
+          pascalOut.println(" ");
+        }
       }
     }
 
     pascalOut.close();
 
-    return strTest;
+    return strEmpty;
 
   }
 
