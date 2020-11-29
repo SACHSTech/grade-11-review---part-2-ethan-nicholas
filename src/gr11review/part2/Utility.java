@@ -1,8 +1,9 @@
 // Given a string, return the sum of the numbers appearing in the string, ignoring all other characters. A number is a series of 1 or more digit chars in a row. (Note: Character.isDigit(char) tests if a char is one of the chars '0', '1', .. '9'. Integer.parseInt(string) converts a string to an int.)
 
 package gr11review.part2;
-import java.io.BufferedReader;
-import java.io.FileReader;
+
+import java.io.*;
+import java.util.*;
 
 public class Utility {
 
@@ -47,15 +48,25 @@ public class Utility {
   // File IO - Read 2
   public static String alphaWord(String filenametxt) throws IOException {
     BufferedReader TextFile = new BufferedReader(new FileReader(filenametxt));
-    String strResultingWord;
-    String strLine;
 
-    while(TextFile.readLine() != null){
-      strLine = TextFile.readLine();
-      if(TextFile.readLine() == null){
-        strResultingWord = TextFile.readLine();
+    String strTempWord;
+    String strLine;
+    String strResultingWord;
+    int intAlphaCompare;
+
+    strResultingWord = null;
+    strTempWord = TextFile.readLine();
+
+    while((strLine = TextFile.readLine()) != null){
+      intAlphaCompare = strTempWord.compareToIgnoreCase(strLine);
+      if(intAlphaCompare > 0){
+        strResultingWord = strLine;
+      } else if (intAlphaCompare < 0){
+        strResultingWord = strTempWord;
       }
     }
+
+    TextFile.close();
     return strResultingWord;
   }
 }

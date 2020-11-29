@@ -17,20 +17,26 @@ public class Main {
     String filenametxt;
     String strAlphaword;
 
+    filenametxt = "src/gr11review/part2/words.txt";
+    strAlphaword = "";
+
     System.out.println("Select the program to run: ");
-    System.out.println("Options: Methods 2, ");
+    System.out.println("Options:");
+    System.out.println("Methods 2 - 1");
+    System.out.println("File IO 2 - 2");
     strSelect = keyboard.readLine();
 
     switch (strSelect){
-      case "Methods 2" :
+      case "1" :
         System.out.print("Give me a string: ");
         str = keyboard.readLine();
         intSum = Utility.sumNumbers(str);
         System.out.println("This is the sum: " + intSum);
         break;
-      case "File IO 2" :
-        Utility.alphaWord(filenametxt);
+      case "2" :
+        strAlphaword = Utility.alphaWord(filenametxt);
         System.out.println("This is the first alphabetical word: " + strAlphaword);
+        break;
       default :
         System.out.println("That is not an option");
         break;
