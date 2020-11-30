@@ -25,6 +25,8 @@ public class Main {
 
     boolean blnBalanced;
 
+    int n;
+
     // Initializing Variables
     filenametxt = "src/gr11review/part2/words.txt";
     strAlphaword = "";
@@ -73,6 +75,11 @@ public class Main {
         }
         blnBalanced = Utility.canBalance(nums);
         System.out.println("Can it be balanced: " + blnBalanced);
+        break;
+      case "5" :
+        System.out.print("Give me an integer: ");
+        n = Integer.parseInt(keyboard.readLine());
+        Utility.diagonal(n);
         break;
       default :
         System.out.println("That is not an option");
