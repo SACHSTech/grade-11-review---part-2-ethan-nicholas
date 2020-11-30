@@ -100,30 +100,40 @@ public class Utility {
   }
 
 // Given a non-empty array, return true if there is a place to split the array so that the sum of the numbers on one side is equal to the sum of the numbers on the other side. Signature public boolean canBalance(int[] nums)
+
+  // Array 4
   public static boolean canBalance(int[] nums) {
+
+    // Variables
     int intSum;
     int intSum2;
     int intLoop;
     int intLoop2;
 
+    // Initializing Variables
     intSum = 0;
-    intSum2 = 1;
-    while (intSum != intSum2) {
-      for (intLoop = (nums.length - 1); intLoop > 1; intLoop--) {
-        intSum = intSum + nums[intLoop];
-        System.out.println("Sum 1: " + intSum);
-      }
-      for (intLoop2 = (nums.length - 2); intLoop2 > 0; intLoop2--) {
-        intSum2 = intSum2 + nums[intLoop2];
-        if(intLoop2 == 0){
-          intSum2 = 0;
-        }
-        System.out.println("Sum 2: " + intSum2);
-      }
+    intSum2 = 0;
+
+    // For loop that sums up all the numbers in the array
+    for (intLoop = 0; intLoop < nums.length; intLoop++){
+      intSum = intSum + nums[intLoop];
     }
-    if (intSum == intSum2){
-      return true;
+
+    // For loop that also sums up all the numbers in the array
+    for (intLoop2 = 0; intLoop2 < nums.length; intLoop2++){
+      intSum2 = intSum2 + nums[intLoop2];
+
+      // While re-summing up all the numbers in the array. During each loop,checks the sum of all numbers in the current loop and compares it with the total sum of the whole array.
+      // If the total loop's sums are ever double of the current loop's sums, this means the array can be balanced.
+      if ((intSum - intSum2) == intSum2) {
+        return true;
+        
+      // But, if the current loop's sum is ever greater than the total's loops sum - the current loop's sum, this means that the array can never be balanced.
+      } else if (intSum2 > (intSum - intSum2)) {
+        return false;
+      }
     }
     return false;
   }
 }
+    
