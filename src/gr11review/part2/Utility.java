@@ -228,7 +228,7 @@ public class Utility {
 
   /**
   * Given a string, looks for a pattern that has a length of 3, starts with "z", and ends with "p"
-  * Creates a new string with the middle character between "z" and "p" taken out  
+  * Creates a new string with the middle character between "z" and "p" taken out (Method 1)  
   * 
   * @param str The string that is analyzed for the pattern 
   * @return The new string
@@ -262,7 +262,7 @@ public class Utility {
   }
 
   /**
-  * Given the name of a text file with a single word on each line, the longest word is returned 
+  * Given the name of a text file with a single word on each line, the longest word is returned (File IO 1)
   * 
   * @param filenametxt The name of the text file
   * @return The longest word found in the text file
@@ -303,7 +303,7 @@ public class Utility {
   }
 
   /**
-  * Given an array, for each multiple of 10, the following numbers are changed to that multiple
+  * Given an array, for each multiple of 10, the following numbers are changed to that multiple (Array 1)
   * 
   * @param nums The array with numbers
   * @return The new array with the updated numbers  
@@ -336,7 +336,7 @@ public class Utility {
   }
 
   /**
-  * Given two arrays, checks if all the numbers found in the "innner" array appear in the "outer" array  
+  * Given two arrays, checks if all the numbers found in the "innner" array appear in the "outer" array (Array 3) 
   *
   * @param outer The first array
   * @param inner The second array
@@ -384,7 +384,7 @@ public class Utility {
   }
 
   /**
-  * Given two values representing the amount of rows and columns, a Pascal's triangle is displayed on a textfile
+  * Given two values representing the amount of rows and columns, a Pascal's triangle is displayed on a textfile (Array 5)
   *
   * @param i The number of the rows
   * @param j The number of columns
