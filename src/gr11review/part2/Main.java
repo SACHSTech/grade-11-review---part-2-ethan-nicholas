@@ -99,7 +99,7 @@ public class Main {
         System.out.println(Utility.longestWord("src/gr11review/part2/words.txt"));
         break;
       case "8" :
-        num = {10, 1, 9, 20};
+        int[] num = {10, 1, 9, 20};
         Utility.tenRun(num);
         break;
       case "9" :
