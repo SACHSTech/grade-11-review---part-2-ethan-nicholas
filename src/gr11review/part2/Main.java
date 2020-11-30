@@ -21,6 +21,9 @@ public class Main {
 
     int val;
     int intUserInputNum;
+    int[] nums;
+
+    boolean blnBalanced;
 
     // Initializing Variables
     filenametxt = "src/gr11review/part2/words.txt";
@@ -31,6 +34,8 @@ public class Main {
     System.out.println("Methods 2 - 1");
     System.out.println("File IO 2 - 2");
     System.out.println("Array 2 - 3");
+    System.out.println("Array 4 - 4");
+    System.out.println("Array 6 - 5");
     System.out.println("");
     strSelect = keyboard.readLine();
 
@@ -48,7 +53,7 @@ public class Main {
       case "3" :
         System.out.print("How many numbers do you want in the array: ");
         intUserInputNum = Input.nextInt();
-        int[] nums = new int[intUserInputNum];
+        nums = new int[intUserInputNum];
         System.out.print("Enter the numbers: ");
         for(int i = 0; i < intUserInputNum; i++){
           nums[i] = Input.nextInt();
@@ -57,6 +62,17 @@ public class Main {
         val = Integer.parseInt(keyboard.readLine());
         Utility.notAlone(nums, val);
         System.out.println("Changed Array: " + Arrays.toString(nums));
+        break;
+      case "4" :
+        System.out.print("How many numbers do you want in the array: ");
+        intUserInputNum = Input.nextInt();
+        nums = new int[intUserInputNum];
+        System.out.print("Enter the numbers: ");
+        for(int i = 0; i < intUserInputNum; i++){
+          nums[i] = Input.nextInt();
+        }
+        blnBalanced = Utility.canBalance(nums);
+        System.out.println("Can it be balanced: " + blnBalanced);
         break;
       default :
         System.out.println("That is not an option");

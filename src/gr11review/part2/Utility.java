@@ -100,4 +100,30 @@ public class Utility {
   }
 
 // Given a non-empty array, return true if there is a place to split the array so that the sum of the numbers on one side is equal to the sum of the numbers on the other side. Signature public boolean canBalance(int[] nums)
+  public static boolean canBalance(int[] nums) {
+    int intSum;
+    int intSum2;
+    int intLoop;
+    int intLoop2;
+
+    intSum = 0;
+    intSum2 = 1;
+    while (intSum != intSum2) {
+      for (intLoop = (nums.length - 1); intLoop > 1; intLoop--) {
+        intSum = intSum + nums[intLoop];
+        System.out.println("Sum 1: " + intSum);
+      }
+      for (intLoop2 = (nums.length - 2); intLoop2 > 0; intLoop2--) {
+        intSum2 = intSum2 + nums[intLoop2];
+        if(intLoop2 == 0){
+          intSum2 = 0;
+        }
+        System.out.println("Sum 2: " + intSum2);
+      }
+    }
+    if (intSum == intSum2){
+      return true;
+    }
+    return false;
+  }
 }
