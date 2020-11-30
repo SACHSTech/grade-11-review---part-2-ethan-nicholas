@@ -9,6 +9,8 @@ public class Main {
 
   public static void main(String[] args) throws IOException {
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+    // Scanner to allow user to input values into an array
     Scanner Input = new Scanner(System.in);
 
     // Variables
@@ -31,16 +33,20 @@ public class Main {
     filenametxt = "src/gr11review/part2/words.txt";
     strAlphaword = "";
 
+    // Asking the user what method they want to run
     System.out.println("Select the program to run: ");
+    System.out.println("");
     System.out.println("Options:");
     System.out.println("Methods 2 - 1");
     System.out.println("File IO 2 - 2");
-    System.out.println("Array 2 - 3");
-    System.out.println("Array 4 - 4");
-    System.out.println("Array 6 - 5");
+    System.out.println("  Array 2 - 3");
+    System.out.println("  Array 4 - 4");
+    System.out.println("  Array 6 - 5");
     System.out.println("");
     strSelect = keyboard.readLine();
+    System.out.println("");
 
+    // Switch to show the paths of different user inputs
     switch (strSelect){
       case "1" :
         System.out.print("Give me a string: ");
