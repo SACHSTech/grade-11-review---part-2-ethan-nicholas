@@ -10,7 +10,7 @@ public class Main {
   public static void main(String[] args) throws IOException {
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
-    // Scanner to allow user to input values into an array
+    // Scanner to allow user to input values into an array.
     Scanner Input = new Scanner(System.in);
 
     // Variables
