@@ -37,16 +37,11 @@ public class Main {
     System.out.println("Select the program to run: ");
     System.out.println("");
     System.out.println("Options:");
-    System.out.println("Methods 2 - 1 (Ethan's Method)");
-    System.out.println("File IO 2 - 2 (Ethan's Method)");
-    System.out.println("  Array 2 - 3 (Ethan's Method)");
-    System.out.println("  Array 4 - 4 (Ethan's Method)");
-    System.out.println("  Array 6 - 5 (Ethan's Method)");
-    System.out.println("Methods 1 - 6 (Nick's Method)");
-    System.out.println("File IO 1 - 7 (Nick's Method)");
-    System.out.println("  Array 1 - 8 (Nick's Method)");
-    System.out.println("  Array 3 - 9 (Nick's Method)");
-    System.out.println("  Array 5 - 10(Nick's Method)");
+    System.out.println("Methods 2 - 1");
+    System.out.println("File IO 2 - 2");
+    System.out.println("  Array 2 - 3");
+    System.out.println("  Array 4 - 4");
+    System.out.println("  Array 6 - 5");
     System.out.println("");
     strSelect = keyboard.readLine();
     System.out.println("");
@@ -91,26 +86,6 @@ public class Main {
         System.out.print("Give me an integer: ");
         n = Integer.parseInt(keyboard.readLine());
         Utility.diagonal(n);
-        break;
-      case "6" :
-        System.out.println(Utility.zipZap("zipXzap"));
-        break;
-      case "7" :
-        System.out.println(Utility.longestWord("src/gr11review/part2/words.txt"));
-        break;
-      case "8" :
-        int[] num = {10, 1, 9, 20};
-        Utility.tenRun(num);
-        break;
-      case "9" :
-        int[] outer = {1,2,4,6};
-        int[] inner = {2,4};
-        System.out.println(Utility.linearIn(outer, inner));
-        break;
-      case "10" :
-        int i = 3;
-        int j = 4;
-        Utility.pascalTri(i, j);
         break;
       default :
         System.out.println("That is not an option");
