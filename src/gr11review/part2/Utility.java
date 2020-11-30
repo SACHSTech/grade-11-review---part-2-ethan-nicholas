@@ -4,7 +4,7 @@ package gr11review.part2;
 import java.io.*;
 import java.util.*;
 
-// Nick's Imports
+// Nicholas's Imports
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
