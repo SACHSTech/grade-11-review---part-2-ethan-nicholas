@@ -109,31 +109,40 @@ public class Utility {
     int intSum2;
     int intLoop;
     int intLoop2;
+    int intLoop3;
 
     // Initializing Variables
     intSum = 0;
     intSum2 = 0;
 
-    // For loop that sums up all the numbers in the array
-    for (intLoop = 0; intLoop < nums.length; intLoop++){
-      intSum = intSum + nums[intLoop];
-    }
+    // For loop that determines where the divider is placed in the array.
+    for (intLoop3 = 0; intLoop3 < nums.length - 1; intLoop3++){
 
-    // For loop that also sums up all the numbers in the array
-    for (intLoop2 = 0; intLoop2 < nums.length; intLoop2++){
-      intSum2 = intSum2 + nums[intLoop2];
+      // For loop that counts that always counts to the first element of the array. However, the for loop's starting point will slowly get closer to the beginning of the array. Also adds up all those counted values.
+      for (intLoop = (nums.length - 2) - intLoop3; intLoop > -1; intLoop--){
+        intSum = intSum + nums[intLoop];
+      }
 
-      // While re-summing up all the numbers in the array. During each loop,checks the sum of all numbers in the current loop and compares it with the total sum of the whole array.
-      // If the total loop's sums are ever double of the current loop's sums, this means the array can be balanced.
-      if ((intSum - intSum2) == intSum2) {
+      // For loop that always counts to the last element of the array. However, the for loop's starting point will slowly get closer to the beginning of the array. Also adds up all those counted values.
+      for (intLoop2 = (nums.length - 1) - intLoop3; intLoop2 < nums.length; intLoop2++){
+        intSum2 = intSum2 + nums[intLoop2];
+      }
+
+      // If statement that detects when the sums of both counts are equal. If they are ever equal, the array can be balanced.
+      if (intSum2 == intSum){
         return true;
-        
-      // But, if the current loop's sum is ever greater than the total's loops sum - the current loop's sum, this means that the array can never be balanced.
-      } else if (intSum2 > (intSum - intSum2)) {
+
+      // If statement that detects when the count that goes to the last element of the array is greater than the count that goes to the beginning of the array. If this ever happens, it is impossible for the array to be balanced.
+      } else if (intSum2 > intSum){
         return false;
       }
+
+      // After each divider loop, resets the values of both sums. Therefore, the sums can be re-added.
+      intSum = 0;
+      intSum2 = 0;
     }
+
+    // Prevents an error in the program.
     return false;
   }
 }
-    
